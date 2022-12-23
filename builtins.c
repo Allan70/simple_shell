@@ -38,7 +38,7 @@ int shell_cd(char **arguments)
 int shell_help(char **arguments)
 {
 	int i;
-	printf("Stephen Brennan's LSH\n");
+	printf("Welcome to Simple Shell help\n");
 	printf("Type program names and arguments, and hit enter.\n");
 	printf("The following are built in:\n");
 
