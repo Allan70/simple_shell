@@ -10,9 +10,9 @@
 char *shell_read_line(void)
 {
 	char *line = NULL;
-	ssize_t buffer_size = 0;
+	size_t buffer_size = 0;
 
-	if (getline(&line, &buffer_size, stdin) == -1)
+	if (getline(&line,&buffer_size, stdin) == -1)
 	{
 		if (feof(stdin))
 		{

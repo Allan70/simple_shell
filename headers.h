@@ -13,11 +13,11 @@ int shell_num_builtins();
 
 /* Builins prototypes */
 int shell_cd(char **arguments);
-int shell_help(char **arguments);
-int shell_exit(char **arguments);
+int shell_help();
+int shell_exit();
 
 /*List of built in commands */
-char *builtin_string[] = {
+char *builtin_strings[] = {
 	"cd",
 	"help",
 	"exit"

@@ -7,7 +7,7 @@
 
 int shell_num_builtins()
 {
-	return sizeof(builtin_string)/sizeof(char *);
+	return (sizeof(builtin_strings)/sizeof(char *));
 }
 
 int shell_cd(char **arguments)
@@ -25,7 +25,7 @@ int shell_cd(char **arguments)
 	return (1);
 }
 
-int shell_help(char **arguments)
+int shell_help()
 {
 	int i;
 	printf("Welcome to Simple Shell help\n");
@@ -34,14 +34,14 @@ int shell_help(char **arguments)
 
 	for (i = 0; i < shell_num_builtins();i++)
 	{
-		printf(" %s\n", builtin_string[i]);
+		printf(" %s\n", builtin_strings[i]);
 	}
 
 	printf("Use the man command for information on other programs. \n");
 	return (1);
 }
 
-int shell_exit(char **arguments)
+int shell_exit()
 {
 	return (0);
 }

@@ -10,9 +10,8 @@
 
 int shell_launch(char **arguments)
 {
-	pid_t pid, wpid;
-	int status;
-
+	pid_t pid;
+	
 	pid = fork();
 	if (pid == 0)
 	{
@@ -21,16 +20,10 @@ int shell_launch(char **arguments)
 			perror("shell");
 		}
 		exit(EXIT_FAILURE);
-	}
-	else if (pid < 0)
+	}else if (pid < 0)
 	{
 		perror("shell");
 	}
-	else
-	{
-		do {
-			wpid = waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
-	}
+
 	return (1);
 }

@@ -19,7 +19,7 @@ int shell_execute(char **arguments)
 
 	for (i = 0; i < shell_num_builtins(); i++)
 	{
-		if (strcmp(arguments[0], builtin_string[i]) == 0)
+		if (strcmp(arguments[0], builtin_strings[i]) == 0)
 		{
 			return ((*builtin_func[i])(arguments));
 		}
