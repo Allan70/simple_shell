@@ -27,8 +27,7 @@ int shell_launch(char **arguments)
 	}
 	else
 	{
-		do
-		{
+		do {
 			wpid = waitpid(pid, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WTFSIGNALED(status));
 	}
