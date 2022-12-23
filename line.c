@@ -13,13 +13,15 @@ char *shell_read_line(void)
 
 	if (getline(&line, &buffer_size, stdin) == -1)
 	{
-		if (feof(stdin)){
+		if (feof(stdin))
+		{
 			exit(EXIT_SUCCESS);
-		} else {
+		} else
+		{
 			perror("readline");
 			exit(EXIT_FAILIURE);
 		}
 	}
 
-	return line;
+	return (line);
 }
