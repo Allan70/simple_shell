@@ -19,9 +19,9 @@ int shell_execute(char **arguments)
 
 	for (i = 0; i < shell_num_builtins(); i++)
 	{
-		if (strcmp(arguments[0], builtin_str[i]) == 0)
+		if (strcmp(arguments[0], builtin_string[i]) == 0)
 		{
-			return (*builtin_func[i])(arguments);
+			return ((*builtin_func[i])(arguments));
 		}
 	}
 	return shell_launch(arguments);

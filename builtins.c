@@ -5,16 +5,6 @@
  * We will begin function declarations for built in shell commands.
  */
 
-int shell_cd(char **arguments);
-int shell_help(char **arguments);
-int shell_exit(char **arguments);
-
-char *builtin_string[] = {
-	"cd",
-	"help",
-	"exit"
-}
-
 int shell_num_builtins()
 {
 	return sizeof(builtin_string)/sizeof(char *);
@@ -25,10 +15,9 @@ int shell_cd(char **arguments)
 	if (arguments[1] == NULL)
 	{
 		fprintf(stderr, "shell: expected rgument to \"cd\"\n");
-	}
-	else
+	} else
 	{
-		if (chdir(args[1]) != 0)
+		if (chdir(arguments[1]) != 0)
 		{
 			perror("shell");
 		}

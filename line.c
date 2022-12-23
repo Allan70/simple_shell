@@ -20,7 +20,7 @@ char *shell_read_line(void)
 		} else
 		{
 			perror("readline");
-			exit(EXIT_FAILIURE);
+			exit(EXIT_FAILURE);
 		}
 	}
 

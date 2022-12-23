@@ -21,7 +21,7 @@ char **shell_split_line(char *line)
 	if (!tokens)
 	{
 		fprintf(stderr, "shell: allocation error\n");
-		exit(EXIT_FAILIURE);
+		exit(EXIT_FAILURE);
 	}
 
 	token = strtok(line, SHELL_TOKEN_DELIMITER);
@@ -37,7 +37,7 @@ char **shell_split_line(char *line)
 			if (!tokens)
 			{
 				fprintf(stderr, "shell: allocation error\n");
-				exit(EXIT_FAILIURE);
+				exit(EXIT_FAILURE);
 			}
 		}
 

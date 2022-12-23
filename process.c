@@ -20,7 +20,7 @@ int shell_launch(char **arguments)
 		{
 			perror("shell");
 		}
-		exit(EXIT_FAILIURE);
+		exit(EXIT_FAILURE);
 	}
 	else if (pid < 0)
 	{
@@ -30,7 +30,7 @@ int shell_launch(char **arguments)
 	{
 		do {
 			wpid = waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && !WTFSIGNALED(status));
+		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 	return (1);
 }
