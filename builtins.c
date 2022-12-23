@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "headers.h"
 
 /**
  * We will begin function declarations for built in shell commands.
