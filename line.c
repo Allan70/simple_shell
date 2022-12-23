@@ -8,37 +8,18 @@
 
 char *shell_read_line(void)
 {
-	int buffer_size = shell_rl_buffer_size;
-	int position = 0;
-	char *buffer = malloc(sizeof(char) * buffer_size);
-	int c;
+	char *line = NULL;
+	ssize_t buffer_size = 0;
 
-	if (!buffer) {
-		fprintf(stderr, "shell: allocation error\n");
-		exit(EXIT_FAILIURE);
-	}
-
-	while (1)
+	if (getline(&line, &buffer_size, stdin) == -1)
 	{
-		c = getchar();
-
-		if (c == EOF || c == '\n')
-		{
-			buffer[position] = '\0';
-			return buffer;
+		if (feof(stdin)){
+			exit(EXIT_SUCCESS);
 		} else {
-			buffer[position] = c;
-		}
-		position++;
-
-		if (position >= buffer_size)
-		{
-			buffer_size += shell_rl_buffer_size;
-			buffer = realloc(buffer, buffer_size);
-			if (!buffer) {
-				fprintf(stderr, "shell: allocation error\n");
-				exit(EXIT_FAILIURE);
-			}
+			perror("readline");
+			exit(EXIT_FAILIURE);
 		}
 	}
+
+	return line;
 }
