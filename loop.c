@@ -1,10 +1,7 @@
 #include <stdio.h>
 
 /*
- * bash_loop - This is where the shell will run in its loop
- *
- * @void: Nothing is being passed into the function
- * Return: Nothing is returned
+ * bash_loop - This is where the shell will run in its loop *
  */
 
 void bash_loop(void)
@@ -21,5 +18,5 @@ void bash_loop(void)
 
 		free(current_line);
 		free(arguments);
-	}while(status);
+	} while (status);
 }
