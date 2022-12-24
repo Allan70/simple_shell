@@ -1,14 +1,13 @@
-#include <stdio.h>
-#include "headers.h"
+#include "./header.h"
 
 /**
- * main - This is a main function for a simple shell
- * Return: Returns an EXIT_SUCCESS
+ * main - entry point
+ *
+ * Return: Status code
  */
-
-int main(void)
+int main()
 {
-	bash_loop();
+	shell_loop();
 
 	return (EXIT_SUCCESS);
 }
