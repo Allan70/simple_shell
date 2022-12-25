@@ -5,7 +5,7 @@
  *
  * Return: Status code
  */
-int main()
+int main(void)
 {
 	shell_loop();
 
