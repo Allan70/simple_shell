@@ -11,5 +11,5 @@ int shell_cd(char **args)
 			perror("shell");
 		}
 	}
-	return 1;
+	return (1);
 }
